@@ -1,4 +1,5 @@
 ---
+title: Yves Rene Shema
 layout: default
 ---
 # Yves Rene Shema Home Page
