@@ -1,0 +1,38 @@
+---
+title: Yves Rene Shema Github main page
+layout: null
+---
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>{{ page.title }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <header class="banner">
+        <div class="container">            
+            <div class="wrapper"> 
+                <img src="/assets/images/yveshema.png" alt="Profile photo" />               
+                
+                <div class="intro">
+                    {% include main-nav.html %}
+                    
+                    <p id="my-name">Hi! I am</p> 
+                    {% assign profile= site.data.profile %}   
+                    <h1>{{ profile.fullname }}</h1>
+                </div>
+            </div>
+            <p>{{ profile.description }}</p>
+            <p>See my <span id="resume"><a href="{{ profile.website }}" target="_blank">resume</a></span>
+            </p>            
+        </div>  
+    </header>
+    <main class="container">
+        <section></section>
+        <aside></aside>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

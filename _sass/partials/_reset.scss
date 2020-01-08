@@ -1,0 +1,54 @@
+/*!
+Author: Yves Rene Shema
+Author URI: https://rysapp.com
+Description: A simple CSS reset/normalize
+*/
+html {
+    line-height: 1.15;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%; // correct default adjustment in iOS after orientation
+}
+
+/* Reset margins to 0 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+main,
+footer,
+section,
+aside {
+    margin: 0;
+    padding: 0;
+}
+
+//List styles
+ul {
+    list-style-type: none;
+}
+
+//Link styles
+a {
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+}
+
+a,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}

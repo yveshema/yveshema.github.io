@@ -1,0 +1,31 @@
+fullname: Yves Rene Shema
+
+description: >
+  I'm a software developer based in Vancouver, BC Canada. 
+  My interests are in the area of web development, specifically 
+  building websites and web applications at both end of the stack.
+  This means I am proficient in Javascript, HTML and CSS and I am 
+  comfortable building servers with Node, Python and others.
+  
+website: https://rysapp.com
+
+linkedin: https://www.linkedin.com/in/yveshema
+
+email: yves.shema@rysapp.com
+
+location:
+  city: Vancouver
+  Country: Canada
+
+skills:
+  - Javascript
+  - HTML
+  - CSS
+  - PHP
+  - Python
+  - ReactJS
+  - Django
+  - Java
+  - C
+  - C++
+  - Linux

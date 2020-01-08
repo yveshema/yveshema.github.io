@@ -1,0 +1,10 @@
+.banner li {    
+    width:8rem;
+    float:left;
+}
+
+.banner ul:after {
+    content: "";
+    display:block;
+    clear:both;
+}

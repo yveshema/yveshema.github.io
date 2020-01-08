@@ -1,0 +1,23 @@
+.container {
+    width: 90%;
+    margin:0 auto;
+}
+
+main {
+    section {
+        width: 60%;
+        margin-right: 2%;
+        float: left;
+    }
+    aside {
+        width: 30%;
+        float: right;
+    }
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+

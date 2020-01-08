@@ -1,5 +1,4 @@
 ---
 layout: default
-title: About
+title: Learn more about Yves Rene Shema
 ---
-<h1>About me</h1>
