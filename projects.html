@@ -1,0 +1,25 @@
+---
+title: Projects
+layout: default
+---
+<ul>
+    {% for repo in site.github.public_repositories %}
+    <li>        
+        <div class="card repo-card">
+            <h4 class="{{ repo.language }}">
+                {% if repo.fork %}
+                <i>{% octicon repo-forked %}</i>
+                {% else %}
+                <i>{% octicon repo %}</i>
+                {% endif %}
+                <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+            </h4>
+            <p>{{ repo.description }}</p>
+            <div class="repo-card-meta">
+                <span class="repo-time">Last updated: {{ repo.updated_at}}</span>
+                <span class="{{ repo.language }} language">{{ repo.language }}</span>            
+            </div>
+        </div>        
+    </li>
+    {% endfor %}
+</ul>

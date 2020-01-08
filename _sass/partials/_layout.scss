@@ -24,18 +24,29 @@ header.banner {
     padding:1em 0;
     background-color:$main-theme-color;
 
-    img {
-        width: 20%;
-        display:block;
+    #avatar {
+        width: 30%;
         margin: 1em;
         float: left;
+        img {
+            max-width: 60%;            
+        }
+        a {
+            font-size: 16px;
+        }
+        
+        span {
+            display:block;
+            color: $secondary-color;
+            font-size: 16px;            
+        }
     }
+    
     .intro {
         width:60%;
         float: right;
 
-        li {  
-            text-align: center;        
+        li {                     
             float:left;
         }
 
@@ -44,6 +55,10 @@ header.banner {
             display: block;
             clear: both;
         }
+    }
+
+    li {
+        text-align: center;
     }
 
     a {            
@@ -101,15 +116,28 @@ header.banner {
         }
         
         li {
-            text-align: left;
+           text-align: left;
         }
     
-        img {
-            width: 150px;
-            float: none;
-            display:block;
-            margin:0 auto 1em auto;
+        #avatar {            
+            margin:0 auto 2em auto;
+            float:none;
+            
+            img {
+                max-width: 150px;            
+            }
+            a {
+                font-size: 16px;
+            }
+            
+            span {
+                display:block;
+                min-width: 30em;
+                color: $secondary-color;
+                font-size: 16px;            
+            }
         }
+
         .intro {
             width:100%;
             float: none;
