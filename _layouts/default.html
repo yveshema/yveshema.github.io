@@ -2,12 +2,14 @@
   <head>
     <meta charset="UTF-8"/>
     <title>{{ page.title }}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
   </head>
   <body>
     {% include header.html %}
-    <div class="container main">
-      {{ content }}
+    <div class="container">
+      <main>{{ content }}</main>
+      <aside></aside>
     </div>    
     {% include footer.html %}
   </body>
