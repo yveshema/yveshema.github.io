@@ -1,0 +1,12 @@
+<ul class="menu">
+    <li><a href="#!"><i class="material-icons">menu</i></a>
+      <ul>
+        <li>Menu</li>
+        {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.link }}">{{ item.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+</ul>
