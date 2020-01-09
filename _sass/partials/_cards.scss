@@ -1,17 +1,16 @@
 .card {
-    border-radius: 5px;
-    margin: 1em;
+    border-radius: 5px;   
     box-shadow: 2px 5px 4px 2px #ccc;
 }
 .repo-card {
-    width:100%;
-    padding:1em;
-
+    width:98%;
+    padding:2%;
+    
     a {
         color:inherit;
     }
 
-    h4 {
+    h4 {        
         font-size: 1.2em;
     }
 }

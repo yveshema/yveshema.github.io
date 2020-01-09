@@ -3,7 +3,8 @@ title: Projects
 layout: default
 ---
 <ul>
-    {% for repo in site.github.public_repositories %}
+    {% assign repos = site.github.public_repositories | reverse %}
+    {% for repo in repos %}
     <li>        
         <div class="card repo-card">
             <h4 class="{{ repo.language }}">

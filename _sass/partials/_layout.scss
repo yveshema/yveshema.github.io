@@ -1,23 +1,41 @@
-.container {
-    width: 90%;
-    margin:0 auto;
+h1,h2,h3 {
+    margin:2em 0;
+}
+h4,h5,h6, p {
+    margin:1em 0;
 }
 
-main {
-    section {
-        width: 60%;
-        margin-right: 2%;
-        float: left;
-    }
-    aside {
-        width: 30%;
-        float: right;
-    }
-    &:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
+.post-meta {
+    font-size: 1em;
+    margin-top: -3em; //pull the post metadata closer to the heading
+    font-style: italic;    
+}
+.container {
+    width: 90%;
+    margin:0 auto; 
+    display: flow-root; 
+}
+
+section, aside {
+    padding:1em 0;
+}
+
+section {
+    //background: #eee;
+    width: 60%;
+    margin-right: 2%;
+    float: left;
+}
+
+aside {
+    width: 30%;
+    float: right;
+}
+
+main:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 header.banner {
@@ -85,6 +103,7 @@ header.banner {
     }    
 
     h1 {
+        margin:0;
         font-size: 4em;        
         color: $secondary-color;
     }
@@ -112,7 +131,7 @@ header.banner {
 @media screen and (max-width: 768px){
     header.banner {
         .container {
-            position:relative;
+            position:relative;            
         }
         
         li {
@@ -172,9 +191,12 @@ header.banner {
         }  
           
     }
+
     section, aside {
         width:100%;
         float:none;
+        padding:1em 0;
+        margin:0;
     }
     //hide the main navigation and show the hamburger menu
     .banner nav {
@@ -184,7 +206,7 @@ header.banner {
     /* remove default styles, margins and any padding */
     .menu, .menu * {
         margin:0;
-        padding:0;
+        padding-top:2px;
         list-style:none;
     }
 
@@ -235,7 +257,9 @@ footer {
     background-color: $complementary-color;
     color: $main-theme-color;
     padding:2em 0;
-    color: #fff;
+    p {
+        color: #fff;
+    }
     text-align: center;
 }
 

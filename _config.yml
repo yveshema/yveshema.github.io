@@ -2,12 +2,20 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-octicons
+  - jekyll-gist
 
 defaults:
   - scope:
       path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
     values:
       layout: "default"
+
+permalink: pretty
 
 
       
