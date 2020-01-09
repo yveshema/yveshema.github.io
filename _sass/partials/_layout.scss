@@ -1,5 +1,5 @@
 h1,h2,h3 {
-    margin:2em 0;
+    margin:1em 0;
 }
 h4,h5,h6, p {
     margin:1em 0;
@@ -7,7 +7,7 @@ h4,h5,h6, p {
 
 .post-meta {
     font-size: 1em;
-    margin-top: -3em; //pull the post metadata closer to the heading
+    margin-top: -2em; //pull the post metadata closer to the heading
     font-style: italic;    
 }
 .container {
@@ -20,8 +20,7 @@ section, aside {
     padding:1em 0;
 }
 
-section {
-    //background: #eee;
+section {    
     width: 60%;
     margin-right: 2%;
     float: left;
@@ -95,17 +94,22 @@ header.banner {
     } 
     
     .navigation {
-        margin-bottom: 2em;
+        margin-bottom: 2em;        
     }
 
+    //Fix the navigation alignment issue
+    .navigation nav {
+        margin-left: -2em;
+    } 
+    
     .current {
-        background-color: $complementary-color;
+       background-color: $complementary-color;
     }    
 
     h1 {
         margin:0;
         font-size: 4em;        
-        color: $secondary-color;
+        color: $secondary-color;        
     }
 
     p {
