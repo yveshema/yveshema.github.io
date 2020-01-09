@@ -44,7 +44,12 @@ layout: null
         </div>  
     </header>
     <main class="container">
-        <section></section>
+        <section>
+          {% assign post = site.posts.first %}
+          <h2>{{ post.title }}</h2>
+          <p class="post-meta">{{ post.date | date_to_string }} - by {{ post.author }}</p>
+          {{ post.content }}
+        </section>
         <aside></aside>
     </main>
     {% include footer.html %}
