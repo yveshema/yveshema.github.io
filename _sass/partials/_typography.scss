@@ -25,3 +25,11 @@ a {
     color:inherit;
 }
 
+a[title="reference"]{
+    text-decoration: underline;
+}
+
+code {
+    font-size:0.6em;
+}
+
