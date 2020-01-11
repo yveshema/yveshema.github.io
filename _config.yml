@@ -1,9 +1,10 @@
+url: "https://yveshema.github.io"
 plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-seo-tag  
   - jekyll-octicons
-  - jekyll-gist
-  - jekyll-archives
+  - jekyll-gist  
+  - jekyll-feed 
+  - jekyll-sitemap   
 
 defaults:
   - scope:
@@ -16,16 +17,4 @@ defaults:
     values:
       layout: "default"
 
-permalink: pretty
-
-jekyll-archives:
-  enabled: []
-  layout: archives
-  permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    tag: '/tag/:name/'
-    category: '/category/:name/'
-
-
-      
+permalink: pretty     
