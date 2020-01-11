@@ -1,6 +1,8 @@
 ---
 author: Shema
 title: How to build responsive navigation in pure CSS
+categories: [CSS, responsive design]
+tags: [css,html,responsive,web]
 ---
 
 I have been working on my personal github pages website and I wanted it to be responsive. One of the things to consider in responsive design is navigation. In many cases the navigation bar we are accustomed to interacting with on the desktop is not suitable for smaller devices. In the absence of a responsive approach, a number of usability issues could arise, including the navigation bar overlapping other content or being squashed to much to be of any use.

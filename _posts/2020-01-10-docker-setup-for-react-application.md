@@ -1,6 +1,8 @@
 ---
 title: A simple docker setup for a React app
 author: Shema
+categories: [docker, React]
+tags: [docker, react, node, development]
 ---
 Containerized application development has become an industry standard over the past couple of years. One of the many motivations for adopting a container based workflow is that container tools such as docker let you encapsulate the application execution environment which is guaranteed to be the same for both development and production. 
 

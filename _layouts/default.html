@@ -10,7 +10,13 @@
     {% include header.html %}
     <main class="container">
       <section>{{ content }}</section>
-      <aside></aside>
+      <aside>
+        <div class="sidebar">
+          {% include latest-posts-widget.html %}
+          {% include categories-widget.html %} 
+          {% include tags-widget.html %}
+        </div>               
+      </aside>
     </main>    
     {% include footer.html %}
   </body>

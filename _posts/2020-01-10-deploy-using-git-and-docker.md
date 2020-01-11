@@ -1,6 +1,8 @@
 ---
 title: How to deploy applications using version control
 author: Shema
+categories: [git,docker,nodeJS]
+tags: [node,docker,git,deployment]
 ---
 I have [previously](https://yveshema.github.io/2020/01/10/docker-setup-for-react-application/ "reference") spoken about container based application development with docker, alluding to a workflow utilized by most developers today. Today I want to switch gears and talk about deployment. Although I will be describing deployment of a containerized application, there is no correlation between the method used and docker itself.
 

@@ -3,6 +3,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-octicons
   - jekyll-gist
+  - jekyll-archives
 
 defaults:
   - scope:
@@ -16,6 +17,15 @@ defaults:
       layout: "default"
 
 permalink: pretty
+
+jekyll-archives:
+  enabled: []
+  layout: archives
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
 
 
       
