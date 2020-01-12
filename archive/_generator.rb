@@ -1,3 +1,8 @@
+# Generator code borrowed from https://github.com/MrLoh/MrLoh.github.io
+# Slightly modified to add index.md page for each top level archive
+# in order to accommodate full breadcrumbs functionality. Without this
+# top level archives pages would display a generic file system listing.
+
 MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 def write_template_file(path, permalink, title, options={})
@@ -21,8 +26,7 @@ end
 # Create containing folders
 tags_folder_path = File.expand_path("../tags/", __FILE__)
 Dir.mkdir(tags_folder_path) unless File.exists?(tags_folder_path)
-categories_folder_path = File.expand_path("../categories/", __FILE__)
-Dir.mkdir(categories_folder_path) unless File.exists?(categories_folder_path)
+
 dates_folder_path = File.expand_path("../dates/", __FILE__)
 Dir.mkdir(dates_folder_path) unless File.exists?(dates_folder_path)
 
@@ -37,15 +41,6 @@ File.open(taglist_path, 'r') do |f|
     end
 end
 
-# Read Categories into array
-categories = []
-categorylist_path = File.expand_path("../../_site/archive/categorylist.txt", __FILE__)
-File.open(categorylist_path, 'r') do |f|
-    while category = f.gets
-        category = category.strip
-        categories += [category] unless category == "" || category == "\n"
-    end
-end
 
 # Read Dates into array
 dates = []
@@ -65,14 +60,6 @@ for tag in tags
     write_template_file(tagpage_path, "tags/#{tagpath}/", tag, {tag: tag})    
 end
 write_template_file(tags_folder_path + "/index.md", "tags/", "Archive",{})
-
-# Create template files for each category
-for category in categories
-    categorypath = category.include?(' ') ? category.downcase.gsub!(' ','-') : category.downcase
-    categorypage_path = categories_folder_path + "/#{categorypath}.md"
-    write_template_file(categorypage_path, "categories/#{categorypath}/", category, {category: category})
-end
-write_template_file(categories_folder_path + "/index.md", "categories/", "Archive",{})
 
 # Create template files for each year and month
 for date in dates

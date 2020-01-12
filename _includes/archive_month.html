@@ -1,7 +1,7 @@
-{% capture pagemonth %}{{ page.year | append: '-' | append: page.month }}{% endcapture %}
+{% assign pagemonth = page.year | append: '-' | append: page.month %}
 
-{% for post in site.posts %}    
-    {% capture postmonth %}{{ post.date | date: '%Y-%m' }}{% endcapture %}    
+{% for post in site.posts %}  
+    {% assign postmonth = post.date | date: '%Y-%m' %}    
     {% if postmonth == pagemonth %}        
         {% include archive_postlisting.html %}
     {% endif %}
