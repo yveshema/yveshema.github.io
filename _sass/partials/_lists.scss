@@ -14,10 +14,14 @@
     margin-bottom: 1em;
 }
 
-.tags li {
+.tags-widget li {
     display: inline-block;
     margin: 0.5em;
     padding: 0.5em;
     border-radius: 2px;
     background: #cecece;
+}
+
+.taglist a {
+    text-shadow: 2px 2px 2px $heading-color;
 }

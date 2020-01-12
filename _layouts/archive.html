@@ -1,33 +1,55 @@
----
-type: archive
-layout: default
----
-<div class="archive">
-    {% if page.title == 'Archive' %}
-    <h2>{{ page.title }}</h2>
-    {% include archive_index.html %}
-    {% else %}
-    <h2>Archive: {{ page.title }}</h2>
-    {% endif %}
-    {% comment %}
-    {% if page.tag and content != '' %}
-    <article title="{{ page.title }}">
-        <div class="content">
-            {{ content }}
-            <h3>Blog posts about {{ page.title }}:</h3>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% feed_meta %}
+    <title>{{ page.title }}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+    {% seo %}
+  </head>
+  <body ontouchstart="">
+    {% include header.html %}
+    <main class="container">
+      {% include breadcrumbs.html %}
+      <section>
+        <div class="archive">
+          {% if page.title == 'Archive' %}
+          <h2>{{ page.title }}</h2>
+          {% include archive_index.html %}
+          {% else %}
+          <h2>Archive: {{ page.title }}</h2>
+          {% endif %}
+          {% comment %}
+          {% if page.tag and content != '' %}
+          <article title="{{ page.title }}">
+              <div class="content">
+                  {{ content }}
+                  <h3>Blog posts about {{ page.title }}:</h3>
+              </div>
+          </article>     
+          {% endif %}
+          {% endcomment %}
+          {% unless page.title == 'Archive' %}
+          <ul>
+              {% if page.month %}
+              {% include archive_month.html %}
+              {% elsif page.year %}
+              {% include archive_year.html %}
+              {% elsif page.tag %}
+              {% include archive_tag.html %}        
+              {% endif %}        
+          </ul>
+          {% endunless %}
         </div>
-    </article>     
-    {% endif %}
-    {% endcomment %}
-    {% unless page.title == 'Archive' %}
-    <ul>
-        {% if page.month %}
-        {% include archive_month.html %}
-        {% elsif page.year %}
-        {% include archive_year.html %}
-        {% elsif page.tag %}
-        {% include archive_tag.html %}        
-        {% endif %}        
-    </ul>
-    {% endunless %}
-</div>
+      </section>
+      <aside>
+        <div class="sidebar">
+          {% include search-google.html %}
+          {% include latest-posts-widget.html %}                     
+        </div>               
+      </aside>
+    </main>    
+    {% include footer.html %}
+  </body>
+</html>
