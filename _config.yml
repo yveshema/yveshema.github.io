@@ -12,6 +12,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      author-link: "https://rysapp.com"
   - scope:
       path: ""
     values:
