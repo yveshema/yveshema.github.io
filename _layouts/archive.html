@@ -1,0 +1,33 @@
+---
+type: archive
+layout: default
+---
+<div class="archive">
+    {% if page.title == 'Archive' %}
+    <h2>{{ page.title }}</h2>
+    {% include archive_index.html %}
+    {% else %}
+    <h2>Archive: {{ page.title }}</h2>
+    {% endif %}
+    {% if page.tag and content != '' %}
+    <article title="{{ page.title }}">
+        <div class="content">
+            {{ content }}
+            <h3>Blog posts about {{ page.title }}:</h3>
+        </div>
+    </article>
+    {% endif %}
+    {% unless page.title == 'Archive' %}
+    <ul>
+        {% if page.month %}
+        {% include archive_month.html %}
+        {% elsif page.year %}
+        {% include archive_year.html %}
+        {% elsif page.tag %}
+        {% include archive_tag.html %}
+        {% elsif page.category %}
+        {% include archive_category.html %}
+        {% endif %}        
+    </ul>
+    {% endunless %}
+</div>

@@ -4,7 +4,7 @@ plugins:
   - jekyll-octicons
   - jekyll-gist  
   - jekyll-feed 
-  - jekyll-sitemap   
+  - jekyll-sitemap     
 
 defaults:
   - scope:
@@ -17,4 +17,5 @@ defaults:
     values:
       layout: "default"
 
-permalink: pretty     
+permalink: /:categories/:year/:month/:title/  
+
