@@ -9,14 +9,16 @@ layout: default
     {% else %}
     <h2>Archive: {{ page.title }}</h2>
     {% endif %}
+    {% comment %}
     {% if page.tag and content != '' %}
     <article title="{{ page.title }}">
         <div class="content">
             {{ content }}
             <h3>Blog posts about {{ page.title }}:</h3>
         </div>
-    </article>
+    </article>     
     {% endif %}
+    {% endcomment %}
     {% unless page.title == 'Archive' %}
     <ul>
         {% if page.month %}
