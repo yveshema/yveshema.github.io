@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" 
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:atom="http://www.w3.org/2005/Atom"
+exclude-result-prefixes="atom">
+
+<xsl:template match="/">
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Shema's blog feed</title>
+            <link rel="stylesheet" href="/assets/css/feed.css" />
+        </head>
+        <body>
+            <div class="container">
+            <h1>Shema's blog feed</h1>
+            <xsl:apply-templates select="atom:feed/atom:entry" />
+            <footer>
+                <p>&#169; 2020 Yves Rene Shema.</p>
+            </footer>
+            </div>            
+        </body>
+    </html>
+</xsl:template>
+
+<xsl:template match="atom:entry">
+    <xsl:variable name="Link" select="atom:id" />
+    <section>
+    <h2>
+    <a href="{$Link}">
+    <xsl:value-of select="atom:title"/>
+    </a>
+    </h2>
+    <p><xsl:value-of select="atom:summary"/></p>
+    </section>
+</xsl:template>
+</xsl:stylesheet>           
