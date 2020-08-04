@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/*
+  VARIABLES
+*/
+
+:root {
+  --primary-color: 200,60%,50%;
+  --secondary-color: 5,60%,50%;
+
+  /* Customs properties for defining avatar
+     measurements in a responsive manner */
+  --avatar-size: calc((100vw - 600px) / (1200 - 600) * (200 - 100) + 100px);
+  --avatar-img-left-offset: -4.8vw;
+  --avatar-img-top-offset: -1.8vw;
+  --diamond-size: calc(var(--avatar-size) / 2);
+  --left-offset-1: calc(var(--avatar-size) / 4);
+  --left-offset-2: calc((var(--avatar-size) / 4) * 3);
+  --left-offset-3: calc((var(--avatar-size) / 8) * 5);
+  --left-offset-4: var(--avatar-size);
+  --top-offset: var(--left-offset-1);
+  --small-diamond: var(--left-offset-1);
+}
+
+@media (max-width: 600px) {
+  :root {
+    --avatar-size: 100px;
+    --avatar-img-left-offset: -30px;
+    --avatar-img-top-offset: -10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --avatar-size: 200px;
+    --avatar-img-left-offset: -60px;
+    --avatar-img-top-offset: -25px;
+  }
+}
+
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  min-height: 100%;
+  background: hsl(var(--primary-color));
+}
+
+/* Avatar and decorations
+   ----------------------
+*/
+#avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  position: absolute;
+  left: var(--left-offset-1);
+  top: 0;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+#avatar img {
+  width: 150%;
+  position: relative;
+  left: var(--avatar-img-left-offset);
+  top: var(--avatar-img-top-offset);
+}
+
+#avatar .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--secondary-color), 0.3);
+}
+
+.diamond {
+  width: var(--diamond-size);
+  height: var(--diamond-size);
+  position: absolute;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.diamond .inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* Start counting at 3 because preceded by .face and header */
+.diamond:nth-child(2) {
+  top: var(--top-offset);
+  left: var(--left-offset-1);
+}
+
+.diamond:nth-child(3) {
+  top: var(--top-offset);
+  left: var(--left-offset-2);
+}
+
+.diamond:nth-child(4) {
+  top: 0;
+  left: var(--left-offset-4);
+}
+
+.diamond:nth-child(5) {
+  top: 0;
+}
+
+.diamond:nth-child(6) {
+  width: var(--small-diamond);
+  height: var(--small-diamond);
+  top: 0;
+  left: var(--left-offset-3);
+}
+
+.diamond:nth-child(7) {
+  width: var(--small-diamond);
+  height: var(--small-diamond);
+  top: var(--top-offset);
+  left: var(--left-offset-3);
+}
+
+.diamond:nth-child(2) .inner {
+  background: rgba(0,0,0,0.3);
+}
+
+.diamond:nth-child(3) .inner {
+  background: rgba(255,255,255,0.3);
+}
+
+.diamond:nth-child(4) .inner {
+  background: rgba(255,255,255,0.3);
+}
+
+.diamond:nth-child(5) .inner {
+  background: rgba(0,0,0,0.3);
+}
+
+.diamond:nth-child(6) .inner {
+  background: hsl(var(--secondary-color), 0.6);
+}
+
+.diamond:nth-child(7) .inner {
+  background: hsl(var(--primary-color), 0.6);
+}
+
+/*
+  LAYOUT
+  -----------
+*/
+.container {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  border: .5px solid rgba(255,255,255,0.12);
+}
+
+@media (max-width: 1200px){
+  .container {
+    width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+header {
+  position: relative;
+  height: var(--avatar-size);
+  background: hsl(var(--primary-color));
+}
+
+header section {
+  display: inline-block;
+  position: relative;
+  top: var(--top-offset);
+  left: calc(var(--left-offset-4) + var(--left-offset-1) + var(--left-offset-1));
+  color: #fff;
+  font-size: calc(18px + (24 - 18) * (100vw - 600px) / (1200 - 600));
+  padding-left: 1em;
+  color: black;
+}
+
+@media (max-width: 300px) {
+  header {
+    height: auto;
+  }
+
+  header section {
+    position: static;
+    margin-top: calc(var(--avatar-size) - 2em);
+    padding: 1em;
+  }
+}
+
+header section p:first-child {
+  font-style: italic;
+}
+
+header section p:last-child {
+  color: #fff;
+  font-style: italic;
+}
+
+header ul {
+  float: right;
+  margin-right: 10px;
+  list-style: none;
+}
+
+header ul li {
+  margin: 1em;
+  display: inline-block;
+  float: left;
+}
+
+@media (max-width: 300px) {
+  header ul {
+    max-width: 2em;
+  }
+  header ul li {
+    float: none;
+    display: block;
+    margin: 1em 0;
+  }
+}
+
+header ul a {
+  color: #fff;
+}
+
+.nav li {
+  display: inline-block;
+  width: 4em;
+  float: right;
+  list-style: none;
+  margin-right: 1em;
+  font-size: calc(18px + (20 - 18) * (100vw - 600px) / (1200 - 600));
+}
+
+.nav li:hover {
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  flex: 1;
+  background: hsl(var(--secondary-color));
+  display: flex;
+  flex-direction: column;
+}
+
+.content h4 {
+  color: #fff;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 1em 0 0 1em;
+}
+
+.content > p {
+  text-align:center;
+}
+
+.slider {
+  flex: 1;
+}
+
+.slider > ul {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
+.slider > ul > li {
+  grid-row: 1;
+  grid-column: 1;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0;
+  text-align: right;
+  position: relative;
+}
+
+.slider > ul > li span:first-child {
+  background: rgba(255,255,255,0.6);
+  margin-right: 5px;
+}
+
+.bio-container {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.bio {
+  box-sizing: border-box;
+  width: calc(50% + 2vw);
+  margin: 2rem 6rem 2rem 2rem;
+  padding: 2rem;
+  background: hsl(var(--secondary-color), 0.8);
+  border-radius: 5px;
+  display: inline-block;
+  text-align: left;
+  color: #fff;
+  font-size: calc(20px + (24 - 20) * (100vw - 600px) / (1200 - 600));
+  box-shadow: 0 0 0.3rem rgba(0,0,0,0.3);
+  transform: rotateY(-15deg);
+}
+
+@media only screen and (max-width:600px) {
+  .slider li {
+    max-width: 100%;
+  }
+
+  .slider li .bio {
+    width: auto;
+    transform: rotateY(15deg);
+  }
+}
+
+.bio p {
+  margin: 1em;
+}
+
+.bio ul li:last-child {
+  list-style: none;
+}
+
+.skills {
+  display: inline-block;
+  margin: auto 1em;
+  text-decoration: underline;
+  list-style: none;
+}
+
+footer {
+  font-size: 20px;
+  color: #fff;
+  padding: 1em;
+  background: hsl(var(--primary-color));
+}
+
+footer span {
+  font-size: 1rem;
+  color: black;
+}
+
+span a {
+  color: hsl(var(--secondary-color));
+}
+
+li.dev {
+  background-image: url('/assets/images/laptop.jpg');
+  animation: appear 25s linear infinite;
+}
+
+li.rwa {
+  background-image: url('/assets/images/rwanda.jpg');
+  animation: appear2 25s linear infinite;
+}
+
+li.zim {
+  background-image: url('/assets/images/zimbabwe.jpg');
+  animation: appear3 25s linear infinite;
+}
+
+li.ind {
+  background-image: url('/assets/images/india.jpg');
+  animation: appear4 25s linear infinite;
+}
+
+li.lon {
+  background-image: url('/assets/images/london.jpg');
+  animation: appear5 25s linear infinite;
+}
+
+li.nai {
+  background-image: url('/assets/images/nairobi.jpg');
+  animation: appear6 25s linear infinite;
+}
+
+li.van {
+  background-image: url('/assets/images/vancouver.jpg');
+  animation: appear7 25s linear infinite;
+}
+
+
+/*
+ANIMATIONS
+-----------
+*/
+
+@keyframes appear {
+  0% { z-index: 0; opacity: 1;}
+  16% { z-index: 0; opacity: 1;}
+  20% { z-index: 0; opacity: 0;}
+  21% { z-index: -1; opacity: 0;}
+  100% { z-index: 0; opacity: 1;}
+}
+
+@keyframes appear2 {
+  0% { z-index: -1;}
+  16% { z-index: 0; opacity: 0;}
+  20% { z-index: 0; opacity: 1;}
+  28% { z-index: 0; opacity: 1;}
+  32% { z-index: 0; opacity: 0;}
+  33% {z-index: -1; opacity: 0;}
+  100% { z-index: -1; opacity: 0;}
+}
+
+@keyframes appear3 {
+  0% { z-index: -1;}
+  28% { z-index: 0; opacity: 0;}
+  32% { z-index: 0; opacity: 1;}
+  40% { z-index: 0; opacity: 1;}
+  44% { z-index: 0; opacity: 0;}
+  45% { z-index: -1; opacity: 0;}
+  100% { z-index: -1;}
+}
+
+@keyframes appear4 {
+  0% { z-index: -1;}
+  40% { z-index: 0; opacity: 0;}
+  44% { z-index: 0; opacity: 1;}
+  52% { z-index: 0; opacity: 1;}
+  56% { z-index: 0; opacity: 0;}
+  57% { z-index: -1; opacity: 0;}
+  100% { z-index: -1; opacity: 0;}
+}
+
+@keyframes appear5 {
+  0% { z-index: -1;}
+  52% { z-index: 0; opacity: 0;}
+  56% { z-index: 0; opacity: 1;}
+  64% { z-index: 0; opacity: 1;}
+  68% { z-index: 0; opacity: 0;}
+  69% { z-index: -1; opacity: 0;}
+  100% { z-index: -1; opacity:0;}
+}
+
+@keyframes appear6 {
+  0% { z-index: -1;}
+  64% { z-index: 0; opacity: 0;}
+  68% { z-index: 0; opacity: 1;}
+  76% { z-index: 0; opacity: 1;}
+  80% { z-index: 0; opacity: 0;}
+  81% { z-index: -1; opacity: 0;}
+  100% { z-index: -1; opacity: 0;}
+}
+
+@keyframes appear7 {
+  0% { z-index: -1;}
+  76% { z-index: 0; opacity: 0;}
+  80% { z-index: 0; opacity: 1;}
+  96% { z-index: 0; opacity: 1;}
+  100% { z-index: -1; opacity: 0;}
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(0,0,0,0.3);
+  animation: fullexpand 25s ease-out infinite;
+}
+
+@keyframes fullexpand {
+  0%, 20%, 32%, 44%, 56%, 68%, 80%,100% { width: 0; opacity: 0;}
+  16%, 28%, 40%, 52%, 64%, 76%, 96% { width: 100%; opacity: 1;}
+}
+
+/* PLAY CONTROLS
+  Using the "Checkbox hack"
+  https://css-tricks.com/the-checkbox-hack/
+*/
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+input[type='checkbox']:checked ~ label:before {
+  content: "";
+  display: inline-block;
+  padding-top: 1em;
+  width: 1em;
+  margin-bottom: 1em;
+  background-size: 1em;
+  background-image: url('/assets/images/play.png');
+  position: relative;
+  left: 50%;
+}
+
+input[type='checkbox']:not(:checked) ~ label:before {
+  content: "";
+  display: inline-block;
+  padding-top: 1em;
+  width: 1em;
+  margin-bottom: 1em;
+  background-size: 1em;
+  background-image: url('/assets/images/pause.png');
+  position: relative;
+  left: 50%;  
+}
+
+input[type='checkbox']:checked ~ .slider li,
+input[type='checkbox']:checked ~ .slider .progress-bar {
+  animation-play-state: paused;
+}
+
+/* Alternative pausing option */
+.slider:focus li,
+.slider:focus .progress-bar {
+  animation-play-state: paused;
+}

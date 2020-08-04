@@ -1,66 +1,161 @@
 ---
-title: Yves Rene Shema Github main page
+title: Yves Rene Shema
 layout: null
 ---
 <html>
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Yves Rene Shema is a Vancouver based Software engineer focused on Full Stack Javascript Web Development. Skills include Javascript, HTML, CSS, React, Nodejs and he is also a linux enthusiast.">
     {% feed_meta %}
     <title>{{ page.title }}</title>
+    <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/home.css" type="text/css">
     {% seo %}
   </head>
-  <body ontouchstart="">
-    <header class="banner">
-        <div class="container">
-          {% include mobile-nav.html %}            
-            <div class="wrapper"> 
-                <div id="avatar">
-                  <img src="/assets/images/yveshema.png" alt="Profile photo" />                 
-                    
-                  <span>
-                    <i class="material-icons">location_on</i> Vancouver, BC Canada
-                  </span>                 
-                    
-                  <span>
-                    <a href="https://github.com/yveshema">
-                      <i class="material-icons">link</i> 
-                      https://github.com/yveshema
-                    </a>
-                  </span>
-                  
-                </div>               
-                
-                <div class="intro">
-                    {% include main-nav.html %}
-                    
-                    <p id="my-name">Hi! I am</p> 
-                    {% assign profile= site.data.profile %}   
-                    <h1>{{ profile.fullname }}</h1>
-                </div>
-            </div>
-            <p>{{ profile.description }}</p>
-            <p><a href="{{ profile.website }}" target="_blank" class="resume">More about me here</a></span>
-            </p>            
-        </div>  
-    </header>
-    <main class="container">
-        <section>
-          {% assign post = site.posts.first %}
-          <h2>{{ post.title }}</h2>
-          <p class="post-meta">{{ post.date | date_to_string }} - by {{ post.author }}</p>
-          {{ post.content }}
+  <body>
+    <div class="container"> <!-- START OF PAGE WRAPPER -->
+    <header> <!-- START OF HEADER -->
+      <!-- Avatar image wrapper -->
+      <div id="avatar">
+        <img src="/assets/images/rys.jpg" />
+        <div class="mask"></div>
+      </div>
+
+      <!-- Decorative diamond shapes -->
+      <div class="diamond"><div class="inner"></div></div>
+      <div class="diamond"><div class="inner"></div></div>
+      <div class="diamond"><div class="inner"></div></div>
+      <div class="diamond"><div class="inner"></div></div>
+      <div class="diamond"><div class="inner"></div></div>
+      <div class="diamond"><div class="inner"></div></div>
+      <section>
+        <p>I am</p>
+        <p>Yves Rene Shema</p>
+        <p>Software Engineer</p>
         </section>
-        <aside>
-          <div class="sidebar">
-            {% include search-google.html %}
-            {% include latest-posts-widget.html %}            
-            {% include tags-widget.html %}
-          </div>          
-        </aside>
-    </main>
-    {% include footer.html %}
+
+        <ul>
+          <li><a href="https://www.linkedin.com/in/yveshema"
+            target="_blank" rel="noreferrer noopener"
+            class="btn-floating btn-small transparent">
+            <i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://000429084.codepen.website/"
+            target="_blank" rel="noreferrer noopener"
+            class="btn-floating btn-small transparent">
+            <i class="fab fa-codepen"></i></a></li>
+        </ul>
+    </header> <!-- END OF HEADER-->
+
+    <div class="content"> <!-- START OF CONTENT AREA -->
+      <ul class="nav">
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+      <h4>A little about me</h4>
+      <input type="checkbox" id="toggle-play" /><label for="toggle-play"></label>
+      <div class="slider" tabindex="0"> <!-- START OF CAROUSEL WRAPPER -->           <div class="progress-bar"></div>
+          <ul> <!-- LIST OF SLIDES STARTS -->
+            <li class="dev">
+              <span>Photo by <a href="https://unsplash.com/@goshua13?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Joshua Aragon</a> on <a href="https://unsplash.com/s/photos/code?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>Software Developer</h2>
+                  <ul>
+                    <li>Because coding is the coolest thing in the world</li>
+                    <li>I focus on fullstack Javascript web development. Key skills:</li>
+                    <li>
+                      <ul class="skills">
+                        <li>Javascript</li>
+                        <li>HTML5</li>
+                        <li>CSS</li>
+                        <li>React</li>
+                        <li>Nodejs</li>
+                      </ul>
+                      <ul class="skills">
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>Git</li>
+                        <li>Linux</li>
+                        <li>Docker</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="rwa">
+              <span>Photo by <a href="https://unsplash.com/@simbyvan_rudahusha?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Simbi Yvan</a> on <a rwanda: href="https://unsplash.com/s/photos/rwanda?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>Rwanda</h2>
+                  <p>I was born and raised in the beautiful land of a thousand hills.</p>
+                  <p>I attended school when French was the official language of instruction. As a result, I am bilingual.</p>
+                </div>
+              </div>
+            </li>
+            <li class="zim">
+              <span>Photo by <a href="https://unsplash.com/@jasonzhao_?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jason Zhao</a> on <a href="https://unsplash.com/s/photos/victoria-falls?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>Zimbabwe</h2>
+                  <p>My first trip outside my home country was to Harare, Zimbabwe to study Philosophy.</p>
+                  <p>I spent four unforgettable years there in the course of which I fell in love with the country and its amazing people.</p>
+                </div>
+              </div>
+            </li>
+            <li class="ind">
+              <span>Photo by <a href="/photographer/mcfly1980-48576">Nicole Kotschate</a> from <a href="https://freeimages.com/">FreeImages</a></span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>India</h2>
+                  <p>I earned my first degree in Computer Science at Loyola College in the Southern Indian city of Chennai.</p>
+                  <p>I used the opportunity to indulge my other passion: traveling. I criss-crossed the country, sampling a variety of delicious dishes along the way and taking in a panoply of breathtaking sights.</p>
+                </div>
+              </div>
+            </li>
+            <li class="lon">
+              <span>Photo by Yves Rene Shema</span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>London</h2>
+                  <p>I spent a year at Birbeck, University of London, working on my Master's degree.</p>
+                  <p>Going back has been on my wish list ever since.</p>
+                </div>
+              </div>
+            </li>
+            <li class="nai">
+              <span>Photo by <a href="https://unsplash.com/@mustafa_omar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mustafa Omar</a> on <a href="https://unsplash.com/collections/8913939/nairobi-?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>Nairobi</h2>
+                  <p>I called Nairobi home for the better part of the last 5 years. I worked as a communication manager of a faith-based refugee agency.</p>
+                  <p>It's possible I enjoyed myself too much!</p>
+                </div>
+              </div>
+            </li>
+            <li class="van">
+              <span>Image by <a href="https://pixabay.com/users/12019-12019/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2613994">David Mark</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2613994">Pixabay</a></span>
+              <div class="bio-container">
+                <div class="bio">
+                  <h2>Vancouver</h2>
+                  <p>When I decided to move to Canada, I wanted to go as far west as possible.</p>
+                  <p>One look at the map and Vancouver imposed itself as the obvious choice. </p>
+                  <p>Plus, Vancouver has perhaps the mildest climate of any city in the country.</p>
+                </div>
+              </div>
+            </li>
+          </ul> <!-- LIST OF SLIDES ENDS-->
+        <div class="progress-bar"></div>
+      </div> <!-- END OF CAROUSEL WRAPPER -->
+    </div> <!-- CONTENT AREA ENDS -->
+    <footer>
+      <p>&copy; Yves Rene Shema 2020</p>
+      <span>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></span>
+    </footer>
+  </div> <!-- END OF PAGE WRAPPER -->
   </body>
 </html>
