@@ -251,7 +251,7 @@ header ul a {
 }
 
 .nav li {
-  display: inline-block;  
+  display: inline-block;
   float: left;
   list-style: none;
   margin-right: 1em;
@@ -281,6 +281,9 @@ header ul a {
   flex-direction: column;
 }
 
+.content > div:first-child {
+  padding: 0.5em 0;
+}
 .content h4 {
   color: #fff;
   font-weight: normal;
