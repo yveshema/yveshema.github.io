@@ -522,7 +522,7 @@ input[type='checkbox']:not(:checked) ~ label:before {
   background-size: 1em;
   background-image: url('/assets/images/pause.png');
   position: relative;
-  left: 50%;  
+  left: 50%;
 }
 
 input[type='checkbox']:checked ~ .slider li,
