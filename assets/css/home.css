@@ -52,7 +52,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
   min-height: 100%;
-  background: hsl(var(--primary-color));
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 1px, hsl(var(--primary-color), 0.1) 2px),repeating-linear-gradient(-45deg, transparent, transparent 1px, hsl(var(--primary-color), 0.1) 2px);
 }
 
 /* Avatar and decorations
@@ -164,9 +164,10 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
-  border: .5px solid rgba(255,255,255,0.12);
+  box-shadow: 0 0 2px hsl(var(--primary-color));
+  /* border: .5px solid rgba(255,255,255,0.12); */
 }
 
 @media (max-width: 1200px){
@@ -184,7 +185,7 @@ body {
 header {
   position: relative;
   height: var(--avatar-size);
-  background: hsl(var(--primary-color));
+  background: hsl(var(--primary-color),0.6);
 }
 
 header section {
@@ -276,7 +277,7 @@ header ul a {
 
 .content {
   flex: 1;
-  background: hsl(var(--secondary-color));
+  background: hsl(var(--secondary-color), 0.8);
   display: flex;
   flex-direction: column;
 }
@@ -301,7 +302,7 @@ header ul a {
 
 .slider > ul {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: min-content;
   grid-template-columns: 1fr;
 }
 
@@ -312,11 +313,17 @@ header ul a {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   z-index: -1;
   opacity: 0;
   text-align: right;
   position: relative;
+}
+
+@media (hover: none) {
+  .slider > ul > li {
+    background-attachment: initial;
+  }
 }
 
 .slider > ul > li span:first-child {
@@ -331,7 +338,7 @@ header ul a {
 
 .bio {
   box-sizing: border-box;
-  width: calc(50% + 2vw);
+  width: calc(50% + 5vw);
   margin: 2rem 6rem 2rem 2rem;
   padding: 2rem;
   background: hsl(var(--secondary-color), 0.8);
@@ -341,17 +348,19 @@ header ul a {
   color: #fff;
   font-size: calc(20px + (24 - 20) * (100vw - 600px) / (1200 - 600));
   box-shadow: 0 0 0.3rem rgba(0,0,0,0.3);
-  transform: rotateY(-15deg);
+  transform: rotateY(-10deg);
 }
 
 @media only screen and (max-width:600px) {
-  .slider li {
+  .slider > ul > li {
     max-width: 100%;
+    text-align: left;
   }
 
   .slider li .bio {
-    width: auto;
-    transform: rotateY(15deg);
+    width: 80%;
+    margin: 2rem auto 2rem 1rem;
+    transform: rotateY(10deg);
   }
 }
 
@@ -374,7 +383,7 @@ footer {
   font-size: 20px;
   color: #fff;
   padding: 1em;
-  background: hsl(var(--primary-color));
+  background: hsl(var(--primary-color),0.6);
 }
 
 footer span {
@@ -387,7 +396,7 @@ span a {
 }
 
 li.dev {
-  background-image: url('/assets/images/laptop.jpg');
+  background-image: url('/assets/images/computer.jpg');
   animation: appear 25s linear infinite;
 }
 
