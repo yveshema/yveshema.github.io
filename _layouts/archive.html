@@ -2,6 +2,18 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Meta links setup for favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#36484d">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     {% feed_meta %}
     <title>{{ page.title }}</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
@@ -27,7 +39,7 @@
                   {{ content }}
                   <h3>Blog posts about {{ page.title }}:</h3>
               </div>
-          </article>     
+          </article>
           {% endif %}
           {% endcomment %}
           {% unless page.title == 'Archive' %}
@@ -37,8 +49,8 @@
               {% elsif page.year %}
               {% include archive_year.html %}
               {% elsif page.tag %}
-              {% include archive_tag.html %}        
-              {% endif %}        
+              {% include archive_tag.html %}
+              {% endif %}
           </ul>
           {% endunless %}
         </div>
@@ -46,10 +58,10 @@
       <aside>
         <div class="sidebar">
           {% include search-google.html %}
-          {% include latest-posts-widget.html %}                     
-        </div>               
+          {% include latest-posts-widget.html %}
+        </div>
       </aside>
-    </main>    
+    </main>
     {% include footer.html %}
   </body>
 </html>
