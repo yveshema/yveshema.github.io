@@ -81,7 +81,7 @@ header.banner {
     a {
         // color:$secondary-color;
         color: #fff;
-        font-size: 1.5em;
+        // font-size: 1.5em;
     }
 
     .wrapper {
@@ -100,13 +100,15 @@ header.banner {
 
     //Fix the navigation alignment issue
     .navigation nav {
-        margin-left: -2em;
+        // margin-left: -2em;
+        font-size: calc(20px + (24 - 20) * (100vw - 600px) / (1200 - 600));
     }
 
     .current {
        // background-color: $complementary-color;
-       padding: 5px;
-       background-color: rgba(0,0,0,0.1);
+       // padding: 5px;
+       // background-color: rgba(0,0,0,0.1);
+       border-bottom: 2px solid $complementary-color;
     }
 
     h1 {
@@ -207,9 +209,9 @@ header.banner {
         margin:0;
     }
     //hide the main navigation and show the hamburger menu
-    .banner nav {
-        display:none;
-    }
+    // .banner nav {
+    //     display:none;
+    // }
 
     /* remove default styles, margins and any padding */
     .menu, .menu * {
@@ -221,7 +223,8 @@ header.banner {
     .menu {
         width:100%;
 
-        display:block;
+        // display:block;
+        display: none;
 
         li {
             width: 100%;
