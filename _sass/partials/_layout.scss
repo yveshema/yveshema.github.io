@@ -8,19 +8,19 @@ h4,h5,h6, p {
 .post-meta {
     font-size: 1em;
     margin-top: -2em; //pull the post metadata closer to the heading
-    font-style: italic;    
+    font-style: italic;
 }
 .container {
     width: 90%;
-    margin:0 auto; 
-    display: flow-root; 
+    margin:0 auto;
+    display: flow-root;
 }
 
 section, aside {
     padding:1em 0;
 }
 
-section {    
+section {
     width: 60%;
     margin-right: 2%;
     float: left;
@@ -46,24 +46,24 @@ header.banner {
         margin: 1em;
         float: left;
         img {
-            max-width: 60%;            
+            max-width: 60%;
         }
         a {
             font-size: 16px;
         }
-        
+
         span {
             display:block;
             color: $secondary-color;
-            font-size: 16px;            
+            font-size: 16px;
         }
     }
-    
+
     .intro {
         width:60%;
         float: right;
 
-        li {                     
+        li {
             float:left;
         }
 
@@ -78,53 +78,57 @@ header.banner {
         text-align: center;
     }
 
-    a {            
-        color:$secondary-color; 
-        font-size: 1.5em;           
+    a {
+        // color:$secondary-color;
+        color: #fff;
+        font-size: 1.5em;
     }
 
     .wrapper {
-        border: 1px solid $complementary-color;        
+        border: 1px solid $complementary-color;
 
         &:after {
             content: "";
             display: block;
             clear:both;
-        }        
-    } 
-    
+        }
+    }
+
     .navigation {
-        margin-bottom: 2em;        
+        margin-bottom: 2em;
     }
 
     //Fix the navigation alignment issue
     .navigation nav {
         margin-left: -2em;
-    } 
-    
+    }
+
     .current {
-       background-color: $complementary-color;
-    }    
+       // background-color: $complementary-color;
+       padding: 5px;
+       background-color: rgba(0,0,0,0.1);
+    }
 
     h1 {
         margin:0;
-        font-size: 4em;        
-        color: $secondary-color;        
+        font-size: 4em;
+        // color: $secondary-color;
+        color: #fff;
     }
 
     p {
         font-size: 1.5em;
         line-height:1.8;
         color: #fff;
-    }  
-    
+    }
+
     .resume {
         text-decoration: underline;
         font-size: 1.2em;
         color: $secondary-color;
         letter-spacing: 1px;
     }
-      
+
 }
 
 //Hide the hamburger menu on large screens
@@ -135,29 +139,29 @@ header.banner {
 @media screen and (max-width: 768px){
     header.banner {
         .container {
-            position:relative;            
+            position:relative;
         }
-        
+
         li {
            text-align: left;
         }
-    
-        #avatar {            
+
+        #avatar {
             margin:0 auto 2em auto;
             float:none;
-            
+
             img {
-                max-width: 150px;            
+                max-width: 150px;
             }
             a {
                 font-size: 16px;
             }
-            
+
             span {
                 display:block;
                 min-width: 30em;
                 color: $secondary-color;
-                font-size: 16px;            
+                font-size: 16px;
             }
         }
 
@@ -166,25 +170,25 @@ header.banner {
             float: none;
             text-align:center;
         }
-    
+
         .wrapper {
             border: none;
-            a {            
-                color:$secondary-color; 
-                font-size: 1.5em;           
-            }                 
+            a {
+                color:$secondary-color;
+                font-size: 1.5em;
+            }
         }
-    
+
         h1 {
-            font-size: 3em;        
+            font-size: 3em;
             color: $secondary-color;
         }
-    
+
         p {
             font-size: 1.5em;
             line-height:1.6;
             color: #fff;
-        }  
+        }
         #resume a {
             display:inline-block;
             padding: 2px;
@@ -192,8 +196,8 @@ header.banner {
             font-weight: bold;
             background: $complementary-color;
             color:#fff;
-        }  
-          
+        }
+
     }
 
     section, aside {
@@ -206,7 +210,7 @@ header.banner {
     .banner nav {
         display:none;
     }
-    
+
     /* remove default styles, margins and any padding */
     .menu, .menu * {
         margin:0;
@@ -216,7 +220,7 @@ header.banner {
 
     .menu {
         width:100%;
-            
+
         display:block;
 
         li {
@@ -224,7 +228,7 @@ header.banner {
             color: $secondary-color;
         }
 
-        ul {            
+        ul {
             display:none;
             li {
                 padding:0.5em 0;
@@ -232,7 +236,7 @@ header.banner {
                 text-align:center;
                 color: $heading-color;
             }
-            
+
             li:first-child {
                 font-size: 1.5em;
                 font-weight: bold;
@@ -244,17 +248,17 @@ header.banner {
                 color: inherit;
             }
         }
-        
-        & > li:focus-within ul {            
+
+        & > li:focus-within ul {
             display:block;
-            position:fixed;            
+            position:fixed;
             top:0;
             left: 0;
             background: $secondary-color;
             width: 60vw;
             min-height: 100vh;
         }
-    }     
+    }
 }
 
 footer {
